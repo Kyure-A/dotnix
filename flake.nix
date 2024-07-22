@@ -11,6 +11,8 @@
   };
 
   outputs = { self, nixpkgs, emacs-overlay, nixos-wsl }: {
-    
+    nixos-wsl-config = (import ./systems/wsl {
+      inherit self nixpkgs emacs-overlay nixos-wsl;
+    });
   };
 }
