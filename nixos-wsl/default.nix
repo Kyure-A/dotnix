@@ -1,4 +1,13 @@
-{ config, pkgs, ... }: {
+{ config, lib, pkgs, ... }: {
+  imports = [
+    <nixos-wsl/modules>
+  ];
+
+  wsl = {
+    enable = true;
+    defaultUser = "kyre";
+  };
+  
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
