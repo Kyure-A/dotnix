@@ -88,7 +88,8 @@
   users.users.kyre = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
-    defaultUserShell = pkgs.zsh;  
+    shell = pkgs.zsh;  
+    useDefaultShell = true;
     packages = with pkgs; [
       # add package below
     ];    
