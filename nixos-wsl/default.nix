@@ -68,7 +68,7 @@
 
   services = {
     xserver = {
-      enable = true;
+      enable = false;
       displayManager = {
         gdm.enable = true;
       };
