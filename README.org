@@ -5,6 +5,6 @@
 ** Usage
 *** Windows Subsystem for Linux
 #+begin_src shell
-  sudo nixos-rebuild switch --flake ~/ghq/github.com/Kyure-A/nixos-config#wsl --show-trace
+  sudo nixos-rebuild switch --flake .#wsl --show-trace
 #+end_src
 
