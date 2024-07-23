@@ -1,5 +1,6 @@
 { config, lib, pkgs, nixos-wsl, ... }: {
-
+  
+  # https://bombrary.github.io/blog/posts/nixos-wsl-setup/
   imports = [
     nixos-wsl.nixosModules.wsl
   ];
@@ -8,11 +9,11 @@
     enable = true;
     defaultUser = "kyre";
   };
-  
-  boot = {
-    # loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
-  };
+
+  # boot = {
+  #   loader.systemd-boot.enable = true;
+  #   loader.efi.canTouchEfiVariables = true;
+  # };
 
   networking = {
     hostName = "nixos";
@@ -68,7 +69,7 @@
 
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       displayManager = {
         gdm.enable = true;
       };
