@@ -1,5 +1,9 @@
 { pkgs }:
 let
   git = import ./git;
+  starship = import ./starship;
 in
-[ git ]
+[ git
+  starship
+]
+  
