@@ -1,7 +1,5 @@
 { system, nixpkgs, emacs-overlay }:
 let
-  lib = nixpkgs.lib;
-
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
