@@ -3,7 +3,7 @@ let
   username = "kyre";
   system = "x86_64-linux";
 in {
-  wsl = nixpkgs.lib.nixosSystem {
+  x230 = nixpkgs.lib.nixosSystem {
     inherit system;
     modules = [
       ../../nixos
