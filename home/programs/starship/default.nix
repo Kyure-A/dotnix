@@ -1,6 +1,7 @@
 {
   programs.starship = {
     enable = true;
+    enableZshIntegration = true;
     settings = {
       battery = {
         full_symbol = "🔋 ";
