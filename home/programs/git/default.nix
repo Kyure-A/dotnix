@@ -2,12 +2,12 @@
   programs.git = {
     enable = true;
 
-    user = {
-      name = "Kyure_A";
-      email = "49436968+Kyure-A@users.noreply.github.com";
-    };
-
     extraConfig = {
+      user = {
+        name = "Kyure_A";
+        email = "49436968+Kyure-A@users.noreply.github.com";
+      };
+      
       core = {
         editor = "emacs -nw";
         quotepath = false;
