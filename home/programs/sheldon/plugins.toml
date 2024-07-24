@@ -21,13 +21,13 @@ inline = "autoload -U colors && zsh-defer colors"
 [plugins.compinit]
 inline = "autoload -U compinit && zsh-defer compinit -C"
 
-[plugins.dotfiles-async]
-local = "~/dotfiles/.config/zsh/async"
+[plugins.asyncFiles]
+local = "~/.config/sheldon/async"
 use = ["*.zsh"]
 apply = ["defer"]
 
-[plugins.dotfiles-sync]
-local = "~/dotfiles/.config/zsh/sync"
+[plugins.syncFiles]
+local = "~/.config/sheldon/sync"
 use = ["*.zsh"]
 apply = ["source"]
 
