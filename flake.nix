@@ -17,6 +17,8 @@
   outputs = { self, nixpkgs, home-manager, nixos-wsl, emacs-overlay }: {
     nixosConfigurations = (import ./systems/wsl {
       inherit self nixpkgs home-manager nixos-wsl emacs-overlay;
+    }) // (import ./systems/x230 {
+      inherit self nixpkgs home-manager emacs-overlay;
     });
   };
 }
