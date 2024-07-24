@@ -9,4 +9,5 @@ with pkgs; [
   nixd
   nodePackages.typescript-language-server
   openssl
+  satysfi
 ]
