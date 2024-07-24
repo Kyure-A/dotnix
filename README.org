@@ -8,3 +8,7 @@
   sudo nixos-rebuild switch --flake .#wsl --show-trace
 #+end_src
 
+*** ThinkPad X230
+#+begin_src shell
+ sudo nixos-rebuild switch --flake .#x230 --show-trace
+#+end_src
