@@ -10,6 +10,7 @@ setopt interactivecomments # コマンドにコメント(# ... )をつけても�
 setopt nobeep # ビープ音を鳴らさない
 setopt nocaseglob # 大文字小文字を区別しないグロブイング
 setopt nocheckjobs # 終了時に実行中のプロセスに関する警告を出さない
+unsetopt nomatch
 setopt numericglobsort # ファイル名を数字順にソートする
 setopt print_eight_bit # 日本語ファイル名を表示可能にする
 setopt rcexpandparam # パラメータによる配列の拡張
