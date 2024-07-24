@@ -45,9 +45,6 @@ github = "junegunn/fzf"
 [plugins.predict]
 inline = "autoload -U predict-on && predict-on"
 
-[plugins.rtx]
-inline = 'eval "$(rtx activate zsh)"'
-
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'
 
