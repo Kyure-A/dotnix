@@ -10,14 +10,8 @@
     defaultUser = "kyre";
   };
 
-  # boot = {
-  #   loader.systemd-boot.enable = true;
-  #   loader.efi.canTouchEfiVariables = true;
-  # };
-
   networking = {
     hostName = "nixos";
-    #wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     networkmanager.enable = true;
   };
   
@@ -64,8 +58,7 @@
       };
     };
   };  
-  # Enable sound with pipewire.
-  # sound.enable = true;
+
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
@@ -75,8 +68,6 @@
       displayManager = {
         gdm.enable = true;
       };
-      # desktopManager.gnome.enable = true;
-      # windowManager.exwm.enable = true;
       layout = "us";
       xkbVariant = "";
     };
@@ -94,20 +85,12 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;  
     useDefaultShell = true;
-    packages = with pkgs; [
-      # add package below
-    ];    
+    packages = with pkgs; [];    
   };
 
   programs = {
     zsh.enable = true; 
   };
-  
-  environment.systemPackages = with pkgs; [
-    # ((emacsPackagesFor emacsPgtkNativeComp).emacsWithPackages (
-    #   epkgs: [ epkgs.vterm ]
-    # ))
-  ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];  
   nixpkgs.config.allowUnfree = true;
