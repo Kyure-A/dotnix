@@ -13,7 +13,7 @@ WORDCHARS=${WORDCHARS//\/[&.;]} # 単語区切り文字の設定
 
 #export RTX_DATA_DIR=$HOME/.rtx
 #export RTX_CACHE_DIR=$RTX_DATA_DIR/cache
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export STARSHIP_CONFIG=~/.config/starship.toml
 
 [ -n "$EAT_SHELL_INTEGRATION_DIR" ] && \
   source "$EAT_SHELL_INTEGRATION_DIR/zsh"
