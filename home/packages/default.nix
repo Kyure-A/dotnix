@@ -5,8 +5,9 @@ with pkgs; [
   emacs-git
   eza
   ghq
-  nil
+  gnumake
   nixd
+  nixpkgs-fmt
   nodePackages.typescript-language-server
   openssl
   satysfi
