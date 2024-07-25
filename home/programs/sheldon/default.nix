@@ -1,5 +1,5 @@
 {
-  home.files = {
+  home.file = {
     ".config/sheldon/async".source = ./async;
     ".config/sheldon/sync".source = ./sync;
   };
