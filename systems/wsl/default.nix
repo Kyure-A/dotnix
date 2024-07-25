@@ -6,7 +6,8 @@ in {
   wsl = nixpkgs.lib.nixosSystem {
     inherit system;
     modules = [
-      ../../nixos-wsl
+      ../../modules/base
+      ../../modules/nixos-wsl
       nixos-wsl.nixosModules.default
       home-manager.nixosModules.home-manager {
         home-manager.useUserPackages = true;

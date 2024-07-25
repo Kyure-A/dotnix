@@ -1,15 +1,5 @@
-{ config, lib, pkgs, nixos-wsl, ... }: {
+{ config, lib, pkgs, ... }: {
   
-  # https://bombrary.github.io/blog/posts/nixos-wsl-setup/
-  imports = [
-    nixos-wsl.nixosModules.wsl
-  ];
-  
-  wsl = {
-    enable = true;
-    defaultUser = "kyre";
-  };
-
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
