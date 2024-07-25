@@ -30,7 +30,7 @@
   };
   
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
       noto-fonts-emoji
@@ -58,8 +58,10 @@
       displayManager = {
         gdm.enable = true;
       };
-      layout = "us";
-      xkbVariant = "";
+      xkb = {
+        variant = "";
+        layout = "us";
+      };
     };
     printing.enable = true;
     pipewire = {
