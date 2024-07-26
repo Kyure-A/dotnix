@@ -32,7 +32,8 @@
       time = {
         disabled = false;
         use_12hr = false;
-        format = "[\[🕙 $time \]]($style) ";
+        format = "($style) ";
+        time_format = "%T";
       };
     };
   };
