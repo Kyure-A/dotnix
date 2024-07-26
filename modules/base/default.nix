@@ -1,4 +1,17 @@
 { config, lib, pkgs, ... }: {
+
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];
+    optimise = {
+      automatic = true;
+      dates = [ "00:00" ];
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  };
   
   networking = {
     hostName = "nixos";
@@ -83,8 +96,7 @@
   programs = {
     zsh.enable = true;
   };
-  
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];  
+
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "24.11";
 }
