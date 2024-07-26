@@ -19,10 +19,6 @@
           use = ["*.zsh"];
           apply = ["source"];
         };
-        zsh-defer = {
-          github = "romkatv/zsh-defer";
-          apply = ["source"];
-        };
         add-zsh-hook = {
           inline = "autoload -U add-zsh-hook";
         };
