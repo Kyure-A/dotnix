@@ -6,6 +6,7 @@ with pkgs; [
   eza
   ghq
   gnumake
+  neofetch
   nixd
   nixpkgs-fmt
   nodePackages.typescript-language-server
