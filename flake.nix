@@ -16,6 +16,8 @@
   };
 
   outputs = { self, nixpkgs, home-manager, nixos-wsl, emacs-overlay }: {
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
+
     nixosConfigurations = (import ./systems/wsl {
       inherit self nixpkgs home-manager nixos-wsl emacs-overlay;
     }) // (import ./systems/x230 {
