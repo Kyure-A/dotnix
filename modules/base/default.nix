@@ -81,7 +81,7 @@
   };
 
   programs = {
-    zsh.enable = true; 
+    zsh.enable = true;
   };
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];  

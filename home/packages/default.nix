@@ -11,4 +11,5 @@ with pkgs; [
   nodePackages.typescript-language-server
   openssl
   satysfi
+  zsh-defer
 ]
