@@ -1,5 +1,1 @@
-{ emacs-overlay }:
-let
-  emacsOverlay = import emacs-overlay;
-in
-[ emacsOverlay ]
+{ emacs-overlay }: let emacsOverlay = import emacs-overlay; in [ emacsOverlay ]

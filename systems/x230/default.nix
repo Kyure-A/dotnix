@@ -9,9 +9,11 @@ in {
       ../../modules/base
       ../../modules/nixos
       ./hardware-configurations.nix
-      home-manager.nixosModules.home-manager {
+      home-manager.nixosModules.home-manager
+      {
         home-manager.useUserPackages = true;
-        home-manager.users."${username}" = import ../../home { inherit system nixpkgs emacs-overlay; };
+        home-manager.users."${username}" =
+          import ../../home { inherit system nixpkgs emacs-overlay; };
       }
     ];
   };

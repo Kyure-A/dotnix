@@ -25,9 +25,11 @@
         show_always = true;
       };
       hostname = {
-        format = "@[$hostname](white) \n";
+        format = ''
+          @[$hostname](white) 
+        '';
         ssh_only = false;
-        disabled = false; 
+        disabled = false;
       };
       time = {
         disabled = false;

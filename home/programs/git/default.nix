@@ -7,32 +7,22 @@
         name = "Kyure_A";
         email = "49436968+Kyure-A@users.noreply.github.com";
       };
-      
+
       core = {
         editor = "emacs -nw";
         quotepath = false;
         pager = "delta";
       };
 
-      github = {
-        user = "Kyure-A";
-      };
+      github = { user = "Kyure-A"; };
 
-      init = {
-        defaultBranch = "master";
-      };
+      init = { defaultBranch = "master"; };
 
-      merge = {
-        conflictstyle = "diff3";
-      };
+      merge = { conflictstyle = "diff3"; };
 
-      diff = {
-        colorMoved = "default";
-      };
+      diff = { colorMoved = "default"; };
 
-      interactive = {
-        diffFilter = "delta --color-only";
-      };
+      interactive = { diffFilter = "delta --color-only"; };
 
       delta = {
         side-by-side = true;
