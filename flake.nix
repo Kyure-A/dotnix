@@ -3,10 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      #url = "github:nix-community/home-manager/master";
-      url = "github:Kyure-A/home-manager/master";
+    home-manager-official = {
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    home-manager-kyre = {
+      url = "github:Kyure-A/home-manager/master";
     };
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
@@ -15,7 +17,12 @@
     emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-wsl, emacs-overlay }: {
+  outputs = { self, nixpkgs, home-manager-official, home-manager-kyre, nixos-wsl, emacs-overlay }: let
+    settings = {
+      useOfficial = false;
+    };
+    home-manager = if settings.useOfficial then home-manager-official else home-manager-kyre;
+  in {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
 
     nixosConfigurations = (import ./systems/wsl {
