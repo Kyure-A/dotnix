@@ -1,9 +1,9 @@
-{ system, nixpkgs, emacs-overlay, rust-overlay }:
+{ system, nixpkgs, emacs-overlay, rust-overlay, fenix }:
 let
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
-    overlays = import ./overlays { inherit emacs-overlay rust-overlay; };
+    overlays = import ./overlays { inherit emacs-overlay rust-overlay fenix; };
   };
 
   programs = import ./programs { inherit pkgs; };

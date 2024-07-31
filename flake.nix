@@ -20,10 +20,14 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager-official, home-manager-kyre, nixos-wsl
-    , emacs-overlay, rust-overlay }:
+    , emacs-overlay, rust-overlay, fenix }:
     let
       settings = { useOfficial = false; };
       home-manager = if settings.useOfficial then
@@ -34,9 +38,10 @@
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
 
       nixosConfigurations = (import ./systems/wsl {
-        inherit self nixpkgs home-manager nixos-wsl emacs-overlay rust-overlay;
+        inherit self nixpkgs home-manager nixos-wsl emacs-overlay rust-overlay
+          fenix;
       }) // (import ./systems/x230 {
-        inherit self nixpkgs home-manager emacs-overlay rust-overlay;
+        inherit self nixpkgs home-manager emacs-overlay rust-overlay fenix;
       });
     };
 }
