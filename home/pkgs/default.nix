@@ -11,6 +11,7 @@ with pkgs; [
   nixpkgs-fmt
   nodePackages.typescript-language-server
   openssl
+  rust-bin.stable.latest.default 
   satysfi
   zsh-defer
 ]

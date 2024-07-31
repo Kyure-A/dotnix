@@ -1,4 +1,4 @@
-{ self, nixpkgs, home-manager, nixos-wsl, emacs-overlay }:
+{ self, nixpkgs, home-manager, nixos-wsl, emacs-overlay, rust-overlay }:
 let
   username = "kyre";
   system = "x86_64-linux";
@@ -13,7 +13,7 @@ in {
       {
         home-manager.useUserPackages = true;
         home-manager.users."${username}" =
-          import ../../home { inherit system nixpkgs emacs-overlay; };
+          import ../../home { inherit system nixpkgs emacs-overlay rust-overlay; };
       }
     ];
     specialArgs = { inherit nixos-wsl; };
