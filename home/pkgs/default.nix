@@ -13,5 +13,6 @@ with pkgs; [
   openssl
   rust-bin.stable.latest.default 
   satysfi
+  tree-sitter
   zsh-defer
 ]
