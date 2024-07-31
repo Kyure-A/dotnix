@@ -16,10 +16,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     emacs-overlay.url = "github:nix-community/emacs-overlay";
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager-official, home-manager-kyre, nixos-wsl
-    , emacs-overlay }:
+    , emacs-overlay, rust-overlay }:
     let
       settings = { useOfficial = false; };
       home-manager = if settings.useOfficial then
@@ -30,9 +34,9 @@
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
 
       nixosConfigurations = (import ./systems/wsl {
-        inherit self nixpkgs home-manager nixos-wsl emacs-overlay;
+        inherit self nixpkgs home-manager nixos-wsl emacs-overlay rust-overlay;
       }) // (import ./systems/x230 {
-        inherit self nixpkgs home-manager emacs-overlay;
+        inherit self nixpkgs home-manager emacs-overlay rust-overlay;
       });
     };
 }
