@@ -7,7 +7,10 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    home-manager-kyre = { url = "github:Kyure-A/home-manager/master"; };
+    home-manager-kyre = {
+      url = "github:Kyure-A/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
