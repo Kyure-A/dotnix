@@ -1,6 +1,6 @@
 { pkgs }:
 let
-  git = import ./git;
+  git = import ./git { inherit pkgs; };
   sheldon = import ./sheldon;
   starship = import ./starship;
   zsh = import ./zsh { inherit pkgs; };

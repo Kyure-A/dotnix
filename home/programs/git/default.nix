@@ -1,4 +1,4 @@
-{
+{ pkgs } : {
   programs.git = {
     enable = true;
 
@@ -22,7 +22,7 @@
 
       diff = { colorMoved = "default"; };
 
-      interactive = { diffFilter = "delta --color-only"; };
+      interactive = { diffFilter = "${pkgs.delta} --color-only"; };
 
       delta = {
         side-by-side = true;
