@@ -3,6 +3,7 @@ with pkgs; [
   delta
   deno
   emacs-git
+  emacs-lsp-booster
   eza
   ghq
   gnumake
