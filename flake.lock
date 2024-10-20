@@ -205,6 +205,21 @@
         "type": "github"
       }
     },
+    "org-babel": {
+      "locked": {
+        "lastModified": 1726753532,
+        "narHash": "sha256-EVLP55yzqAvlNeJuBohBm4SkHIKrFBb4ahyYBzCi57w=",
+        "owner": "emacs-twist",
+        "repo": "org-babel",
+        "rev": "fb2a3dc4dccb2ab05059c6910c5f83c49f73eba8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "emacs-twist",
+        "repo": "org-babel",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "emacs-overlay": "emacs-overlay",
@@ -213,6 +228,7 @@
         "home-manager-official": "home-manager-official",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",
+        "org-babel": "org-babel",
         "rust-overlay": "rust-overlay"
       }
     },

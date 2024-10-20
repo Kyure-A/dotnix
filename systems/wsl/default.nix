@@ -1,4 +1,5 @@
-{ self, nixpkgs, home-manager, nixos-wsl, emacs-overlay, rust-overlay, fenix }:
+{ self, nixpkgs, home-manager, nixos-wsl, emacs-overlay, rust-overlay, fenix
+, org-babel }:
 let
   username = "kyre";
   system = "x86_64-linux";
@@ -13,7 +14,7 @@ in {
       {
         home-manager.useUserPackages = true;
         home-manager.users."${username}" = import ../../home {
-          inherit system nixpkgs emacs-overlay rust-overlay fenix;
+          inherit system nixpkgs emacs-overlay rust-overlay fenix org-babel;
         };
       }
     ];

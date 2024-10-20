@@ -24,10 +24,11 @@
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    org-babel.url = "github:emacs-twist/org-babel";
   };
 
   outputs = { self, nixpkgs, home-manager-official, home-manager-kyre, nixos-wsl
-    , emacs-overlay, rust-overlay, fenix }:
+    , emacs-overlay, rust-overlay, fenix, org-babel }:
     let
       settings = { useOfficial = false; };
       home-manager = if settings.useOfficial then
@@ -39,9 +40,10 @@
 
       nixosConfigurations = (import ./systems/wsl {
         inherit self nixpkgs home-manager nixos-wsl emacs-overlay rust-overlay
-          fenix;
+          fenix org-babel;
       }) // (import ./systems/x230 {
-        inherit self nixpkgs home-manager emacs-overlay rust-overlay fenix;
+        inherit self nixpkgs home-manager emacs-overlay rust-overlay fenix
+          org-babel;
       });
     };
 }
