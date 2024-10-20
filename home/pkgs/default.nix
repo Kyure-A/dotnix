@@ -1,10 +1,13 @@
 { pkgs }:
 with pkgs; [
+  bun
   delta
   deno
+  docker
   emacs-git
   emacs-lsp-booster
   eza
+  gcc
   ghq
   gnumake
   neofetch
@@ -15,6 +18,8 @@ with pkgs; [
   rust-bin.stable.latest.default
   rust-analyzer
   satysfi
+  tectonic
   tree-sitter
+  web-ext # mozilla
   zsh-defer
 ]

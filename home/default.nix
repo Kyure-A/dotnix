@@ -1,4 +1,4 @@
-{ system, nixpkgs, emacs-overlay, rust-overlay, fenix }:
+{ system, nixpkgs, emacs-overlay, rust-overlay, fenix, org-babel }:
 let
   pkgs = import nixpkgs {
     inherit system;
