@@ -4,6 +4,7 @@ with pkgs; [
   delta
   deno
   docker
+  dotnet-sdk # C#
   emacs-git
   emacs-lsp-booster
   eza
@@ -14,6 +15,7 @@ with pkgs; [
   nixd
   nixpkgs-fmt
   nodePackages.typescript-language-server
+  omnisharp-roslyn # C#
   openssl
   rust-bin.stable.latest.default
   rust-analyzer
