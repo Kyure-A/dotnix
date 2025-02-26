@@ -93,7 +93,6 @@
   programs = {
     zsh.enable = true;
     gnupg = {
-      enable = true;
       agent = {
         enable = true;
         enableSSHSupport = true;
