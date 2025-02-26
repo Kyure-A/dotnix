@@ -11,6 +11,8 @@ with pkgs; [
   gcc
   ghq
   gnumake
+  gnupg
+  keybase
   neofetch
   nixd
   nixpkgs-fmt
