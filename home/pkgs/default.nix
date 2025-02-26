@@ -11,7 +11,7 @@ with pkgs; [
   gcc
   ghq
   gnumake
-  # gnupg
+  gnupg
   keybase
   neofetch
   nixd
@@ -19,10 +19,11 @@ with pkgs; [
   nodePackages.typescript-language-server
   omnisharp-roslyn # C#
   openssl
+  pinentry-all
   rust-bin.stable.latest.default
   rust-analyzer
   satysfi
-  #tectonic
+  # tectonic
   tree-sitter
   web-ext # mozilla
   zsh-defer
