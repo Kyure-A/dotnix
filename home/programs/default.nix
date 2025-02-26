@@ -4,6 +4,5 @@ let
   sheldon = import ./sheldon;
   starship = import ./starship;
   zsh = import ./zsh { inherit pkgs; };
-  gnupg = import ./gnupg;
-in [ git sheldon starship zsh gnupg ]
+in [ git sheldon starship zsh ]
 
