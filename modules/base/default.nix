@@ -72,6 +72,7 @@
         layout = "us";
       };
     };
+    pcscd.enable = true;
     printing.enable = true;
     pipewire = {
       enable = true;
