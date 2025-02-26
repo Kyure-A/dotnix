@@ -22,7 +22,7 @@ with pkgs; [
   rust-bin.stable.latest.default
   rust-analyzer
   satysfi
-  tectonic
+  #tectonic
   tree-sitter
   web-ext # mozilla
   zsh-defer
