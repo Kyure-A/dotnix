@@ -12,7 +12,7 @@
       options = "--delete-older-than 7d";
     };
   };
-
+  
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
@@ -60,7 +60,6 @@
     };
   };
 
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
   services = {
@@ -80,6 +79,7 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+    pulseaudio.enable = false;
   };
 
   users.users.kyre = {
