@@ -15,6 +15,10 @@
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
@@ -29,7 +33,8 @@
   };
 
   outputs = { self, nixpkgs, home-manager-official, home-manager-kyre, nixos-wsl
-    , emacs-overlay, rust-overlay, fenix, org-babel, rustowl-flake }:
+    , emacs-overlay, rust-overlay, fenix, org-babel, rustowl-flake, nix-darwin
+    }:
     let
       settings = { useOfficial = false; };
       home-manager = if settings.useOfficial then
@@ -38,6 +43,11 @@
         home-manager-kyre;
     in {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
+
+      darwinConfigurations = (import ./systems/darwin {
+        inherit self nixpkgs home-manager nix-darwin emacs-overlay rust-overlay
+          fenix org-babel rustowl-flake;
+      });
 
       nixosConfigurations = (import ./systems/wsl {
         inherit self nixpkgs home-manager nixos-wsl emacs-overlay rust-overlay
