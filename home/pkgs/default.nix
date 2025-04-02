@@ -10,6 +10,7 @@ with pkgs; [
   eza
   gcc
   ghq
+  glance
   gnumake
   gnupg
   keybase
