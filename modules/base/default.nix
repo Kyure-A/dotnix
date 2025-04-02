@@ -12,7 +12,7 @@
       options = "--delete-older-than 7d";
     };
   };
-  
+
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
@@ -54,7 +54,7 @@
       defaultFonts = {
         serif = [ "Noto Serif CJK JP" "Noto Color Emoji" ];
         sansSerif = [ "Noto Sans CJK JP" "Noto Color Emoji" ];
-        monospace = [ "FiraCode Nerd Font "  "Noto Color Emoji" ];
+        monospace = [ "FiraCode Nerd Font" "Noto Color Emoji" ];
         emoji = [ "Noto Color Emoji" ];
       };
     };
