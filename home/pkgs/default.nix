@@ -20,6 +20,7 @@ let
     nixd
     nixpkgs-fmt
     nodePackages.typescript-language-server
+    ollama
     omnisharp-roslyn # C#
     openssl
     rust-bin.stable.latest.default
