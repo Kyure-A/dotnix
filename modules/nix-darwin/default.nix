@@ -34,7 +34,7 @@
 
       menuExtraClock = {
         Show24Hour = true;
-        ShowDate = true;
+        ShowDate = 1;
       };
 
       trackpad = {
