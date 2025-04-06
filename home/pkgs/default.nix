@@ -22,7 +22,6 @@ let
     nodePackages.typescript-language-server
     omnisharp-roslyn # C#
     openssl
-    pinentry-all
     rust-bin.stable.latest.default
     rust-analyzer
     satysfi
