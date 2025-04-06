@@ -45,4 +45,24 @@
   };
 
   time.timeZone = "Asia/Tokyo";
+
+  homebrew = {
+    enable = true;
+    onActivation = {
+      autoUpdate = true;
+      upgrade = true;
+      cleanup = "uninstall";
+    };
+
+    brews = [
+      "pinentry-mac"
+    ];
+
+    casks = [
+      "chatgpt"
+      "claude"
+      "firefox@nightly"
+      "warp"
+    ];
+  };
 }
