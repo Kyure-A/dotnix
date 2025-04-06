@@ -11,6 +11,7 @@
   };
   
   system = {
+    stateVersion = 6;
     defaults = {
       CustomUserPreferences = {
         "com.apple.desktopservices" = {
