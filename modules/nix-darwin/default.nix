@@ -7,7 +7,6 @@
 
   nix = {
     settings.experimental-features = [ "nix-command" "flakes" ];
-    optimize = { automatic = true; };
     gc = { automatic = true; };
   };
   
