@@ -1,6 +1,6 @@
 # https://nix-darwin.github.io/nix-darwin/manual/index.html
 
-{ pkgs }: {
+{ pkgs, ... }: {
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
