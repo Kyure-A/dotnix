@@ -25,6 +25,7 @@
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
         NSAutomaticCapitalizationEnabled = false;
+        "com.apple.swipescrolldirection" = true;
       };
 
       finder = {
