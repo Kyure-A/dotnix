@@ -9,6 +9,12 @@
     settings.experimental-features = [ "nix-command" "flakes" ];
     gc = { automatic = true; };
   };
+
+  services = {
+    karabiner-elements = {
+      enable = true;
+    };
+  };
   
   system = {
     stateVersion = 6;
