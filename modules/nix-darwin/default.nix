@@ -34,6 +34,11 @@
         "com.apple.swipescrolldirection" = true;
       };
 
+      dock = {
+        mineffect = "scale";
+        minimize-to-application = true;        
+      };
+
       finder = {
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
