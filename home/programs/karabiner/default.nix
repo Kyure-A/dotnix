@@ -1,5 +1,5 @@
 {
   home.file = {
-    ".config/karabiner".source = ./config/karabiner.json;
+    ".config/karabiner/karabiner.json".source = ./config/karabiner.json;
   };
 }
