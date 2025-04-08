@@ -2,12 +2,13 @@
 with pkgs;
 let
   common = [
+    aider-chat
     bun
     delta
     deno
     docker
     dotnet-sdk # C#
-    emacs-git
+    (emacs-git.override { withNativeCompilation = false; } )
     emacs-lsp-booster
     eza
     gcc
