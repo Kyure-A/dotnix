@@ -66,9 +66,11 @@
     ];
 
     casks = [
+      "alcom"
       "chatgpt"
       "claude"
-      "firefox@nightly"
+      # "firefox@nightly"
+      "unity-hub"
       "warp"
     ];
   };
