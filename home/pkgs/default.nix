@@ -8,7 +8,7 @@ let
     deno
     docker
     dotnet-sdk # C#
-    (emacs-git.override { withNativeCompilation = false; } )
+    (emacs-git.override { withNativeCompilation = false; })
     emacs-lsp-booster
     eza
     gcc
@@ -34,5 +34,13 @@ let
   ];
 
   nonDarwin = if !stdenv.isDarwin then [ pinentry-all ] else [ ];
-  darwin = if stdenv.isDarwin then [ warp-terminal karabiner-elements ] else [ ];
-in common ++ nonDarwin ++ darwin
+  darwin =
+    if stdenv.isDarwin then
+      [
+        warp-terminal
+        karabiner-elements
+      ]
+    else
+      [ ];
+in
+common ++ nonDarwin ++ darwin

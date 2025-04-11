@@ -1,4 +1,8 @@
-{ system, nixpkgs, overlays, org-babel
+{
+  system,
+  nixpkgs,
+  overlays,
+  org-babel,
 }:
 let
   pkgs = import nixpkgs {
@@ -10,7 +14,8 @@ let
   };
 
   programs = import ./programs { inherit pkgs; };
-in {
+in
+{
   imports = programs;
   home.packages = import ./pkgs { inherit pkgs; };
 

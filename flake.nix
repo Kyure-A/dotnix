@@ -32,16 +32,26 @@
     rustowl-flake.url = "github:mrcjkb/rustowl-flake";
   };
 
-  outputs = { self, nixpkgs, home-manager-official, home-manager-kyre, nixos-wsl
-    , emacs-overlay, rust-overlay, fenix, org-babel, rustowl-flake, nix-darwin
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager-official,
+      home-manager-kyre,
+      nixos-wsl,
+      emacs-overlay,
+      rust-overlay,
+      fenix,
+      org-babel,
+      rustowl-flake,
+      nix-darwin,
     }:
     let
-      settings = { useOfficial = false; };
-      home-manager = if settings.useOfficial then
-        home-manager-official
-      else
-        home-manager-kyre;
-      
+      settings = {
+        useOfficial = false;
+      };
+      home-manager = if settings.useOfficial then home-manager-official else home-manager-kyre;
+
       overlays = {
         karabiner-elements = (import ./overlays/karabiner-elements.nix);
         emacs = emacs-overlay.overlay;
@@ -49,17 +59,44 @@
         fenix = fenix.overlays.default;
         rustowl = rustowl-flake.overlays.default;
       };
-    in {
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
-      
-      darwinConfigurations = (import ./systems/darwin {
-        inherit self nixpkgs home-manager nix-darwin overlays org-babel;
-      });
+    in
+    {
+      formatter = {
+        x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+        aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-rfc-style;
+      };
 
-      nixosConfigurations = (import ./systems/wsl {
-        inherit self nixpkgs home-manager nixos-wsl overlays org-babel;
-      }) // (import ./systems/x230 {
-          inherit self nixpkgs home-manager org-babel;
+      darwinConfigurations = (
+        import ./systems/darwin {
+          inherit
+            self
+            nixpkgs
+            home-manager
+            nix-darwin
+            overlays
+            org-babel
+            ;
+        }
+      );
+
+      nixosConfigurations =
+        (import ./systems/wsl {
+          inherit
+            self
+            nixpkgs
+            home-manager
+            nixos-wsl
+            overlays
+            org-babel
+            ;
+        })
+        // (import ./systems/x230 {
+          inherit
+            self
+            nixpkgs
+            home-manager
+            org-babel
+            ;
         });
     };
 }

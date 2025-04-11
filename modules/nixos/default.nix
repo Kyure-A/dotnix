@@ -1,4 +1,10 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
 
   boot = {
     loader.systemd-boot.enable = true;
@@ -7,5 +13,9 @@
 
   sound.enable = true;
 
-  services = { xserver = { desktopManager.gnome.enable = true; }; };
+  services = {
+    xserver = {
+      desktopManager.gnome.enable = true;
+    };
+  };
 }

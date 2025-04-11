@@ -1,8 +1,17 @@
-{ self, nixpkgs, home-manager, emacs-overlay, rust-overlay, fenix, org-babel }:
+{
+  self,
+  nixpkgs,
+  home-manager,
+  emacs-overlay,
+  rust-overlay,
+  fenix,
+  org-babel,
+}:
 let
   username = "kyre";
   system = "x86_64-linux";
-in {
+in
+{
   x230 = nixpkgs.lib.nixosSystem {
     inherit system;
     modules = [
@@ -13,7 +22,14 @@ in {
       {
         home-manager.useUserPackages = true;
         home-manager.users."${username}" = import ../../home {
-          inherit system nixpkgs emacs-overlay rust-overlay fenix org-babel;
+          inherit
+            system
+            nixpkgs
+            emacs-overlay
+            rust-overlay
+            fenix
+            org-babel
+            ;
         };
       }
     ];

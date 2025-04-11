@@ -19,25 +19,39 @@
           use = [ "*.zsh" ];
           apply = [ "source" ];
         };
-        add-zsh-hook = { inline = "autoload -U add-zsh-hook"; };
-        anyframe = { github = "mollifier/anyframe"; };
-        colors = { inline = "autoload -U colors && zsh-defer colors"; };
+        add-zsh-hook = {
+          inline = "autoload -U add-zsh-hook";
+        };
+        anyframe = {
+          github = "mollifier/anyframe";
+        };
+        colors = {
+          inline = "autoload -U colors && zsh-defer colors";
+        };
         compinit = {
           inline = "autoload -U compinit && zsh-defer compinit -C";
         };
-        fzf = { github = "junegunn/fzf"; };
+        fzf = {
+          github = "junegunn/fzf";
+        };
         # per-directory-history = {
         #   github = "jimhester/per-directory-history";
         #   apply = [ "source" ];
         # };
-        predict = { inline = "autoload -U predict-on && predict-on"; };
+        predict = {
+          inline = "autoload -U predict-on && predict-on";
+        };
         starship = {
           inline = ''
             eval "$(starship init zsh)"
           '';
         };
-        zcalc = { inline = "autoload -U zcalc"; };
-        zsh-async = { github = "mafredri/zsh-async"; };
+        zcalc = {
+          inline = "autoload -U zcalc";
+        };
+        zsh-async = {
+          github = "mafredri/zsh-async";
+        };
         zsh-complations = {
           github = "zsh-users/zsh-completions";
           apply = [ "defer" ];
@@ -50,7 +64,9 @@
           github = "zsh-users/zsh-syntax-highlighting";
           apply = [ "defer" ];
         };
-        zsh-terminfo = { inline = "zmodload zsh/terminfo"; };
+        zsh-terminfo = {
+          inline = "zmodload zsh/terminfo";
+        };
       };
       templates = {
         defer = ''

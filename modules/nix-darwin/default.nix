@@ -1,22 +1,28 @@
 # https://nix-darwin.github.io/nix-darwin/manual/index.html
 
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
 
   nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
-    gc = { automatic = true; };
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    gc = {
+      automatic = true;
+    };
   };
-  
+
   # services = {
   #   karabiner-elements = {
   #     enable = true;
   #     package = pkgs.karabiner-elements;
   #   };
   # };
-  
+
   system = {
     stateVersion = 6;
     defaults = {
@@ -26,7 +32,7 @@
           DSDontWriteUSBStores = true; # DS_Store
         };
       };
-      
+
       NSGlobalDomain = {
         NSDocumentSaveNewDocumentsToCloud = false;
         AppleShowAllExtensions = true;
@@ -37,7 +43,7 @@
 
       dock = {
         mineffect = "scale";
-        minimize-to-application = true;        
+        minimize-to-application = true;
       };
 
       finder = {

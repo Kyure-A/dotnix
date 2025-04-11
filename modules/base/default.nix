@@ -1,7 +1,16 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
 
   nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     optimise = {
       automatic = true;
       dates = [ "00:00" ];
@@ -36,7 +45,10 @@
     inputMethod = {
       enable = true;
       type = "fcitx5";
-      fcitx5.addons = with pkgs; [ fcitx5-mozc fcitx5-anthy ];
+      fcitx5.addons = with pkgs; [
+        fcitx5-mozc
+        fcitx5-anthy
+      ];
     };
   };
 
@@ -52,9 +64,18 @@
       allowBitmaps = false;
       allowType1 = false;
       defaultFonts = {
-        serif = [ "Noto Serif CJK JP" "Noto Color Emoji" ];
-        sansSerif = [ "Noto Sans CJK JP" "Noto Color Emoji" ];
-        monospace = [ "FiraCode Nerd Font" "Noto Color Emoji" ];
+        serif = [
+          "Noto Serif CJK JP"
+          "Noto Color Emoji"
+        ];
+        sansSerif = [
+          "Noto Sans CJK JP"
+          "Noto Color Emoji"
+        ];
+        monospace = [
+          "FiraCode Nerd Font"
+          "Noto Color Emoji"
+        ];
         emoji = [ "Noto Color Emoji" ];
       };
     };
@@ -65,7 +86,9 @@
   services = {
     xserver = {
       enable = true;
-      displayManager = { gdm.enable = true; };
+      displayManager = {
+        gdm.enable = true;
+      };
       xkb = {
         variant = "";
         layout = "us";
@@ -84,7 +107,10 @@
 
   users.users.kyre = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
     useDefaultShell = true;
     packages = with pkgs; [ ];

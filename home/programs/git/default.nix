@@ -1,4 +1,5 @@
-{ pkgs }: {
+{ pkgs }:
+{
   programs.git = {
     enable = true;
 
@@ -14,15 +15,25 @@
         pager = "delta";
       };
 
-      github = { user = "Kyure-A"; };
+      github = {
+        user = "Kyure-A";
+      };
 
-      init = { defaultBranch = "master"; };
+      init = {
+        defaultBranch = "master";
+      };
 
-      merge = { conflictstyle = "diff3"; };
+      merge = {
+        conflictstyle = "diff3";
+      };
 
-      diff = { colorMoved = "default"; };
+      diff = {
+        colorMoved = "default";
+      };
 
-      interactive = { diffFilter = "${pkgs.delta} --color-only"; };
+      interactive = {
+        diffFilter = "${pkgs.delta} --color-only";
+      };
 
       delta = {
         side-by-side = true;
