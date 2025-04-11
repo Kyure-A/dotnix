@@ -5,4 +5,6 @@ let
   sheldon = import ./sheldon;
   starship = import ./starship;
   zsh = import ./zsh { inherit pkgs; };
-in [ git karabiner sheldon starship zsh ]
+  common = [ git sheldon starship zsh];
+  darwin = if pkgs.stdenv.isDarwin then [ karabiner ] else [];
+in common ++ darwin
