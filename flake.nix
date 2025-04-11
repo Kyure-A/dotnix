@@ -43,11 +43,11 @@
         home-manager-kyre;
       
       overlays = {
-        karabiner-elements = (import ./overlays/karabiner-elements);
-        emacs = emacs-overlay;
-        rust = rust-overlay;
-        fenix = fenix;
-        rustowl = rustowl-flake;
+        karabiner-elements = (import ./overlays/karabiner-elements.nix);
+        emacs = emacs-overlay.overlay;
+        rust = rust-overlay.overlays.default;
+        fenix = fenix.overlays.default;
+        rustowl = rustowl-flake.overlays.default;
       };
     in {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;

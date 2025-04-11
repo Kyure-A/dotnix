@@ -1,8 +1,8 @@
 { overlays }:
-builtins.catAttrs "default" (builtins.catAttrs "overlays" (with overlays; [
-  emacs
-  rust
-  fenix
-  rustowl
-  karabiner-elements
-]))
+[
+  overlays.karabiner-elements
+  overlays.emacs
+  overlays.rust
+  overlays.fenix
+  overlays.rustowl
+]
