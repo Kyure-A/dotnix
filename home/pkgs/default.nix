@@ -34,5 +34,5 @@ let
   ];
 
   nonDarwin = if !stdenv.isDarwin then [ pinentry-all ] else [ ];
-  darwin = if stdenv.isDarwin then [ warp-terminal ] else [ ];
+  darwin = if stdenv.isDarwin then [ warp-terminal karabiner-elements ] else [ ];
 in common ++ nonDarwin ++ darwin

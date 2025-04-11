@@ -9,13 +9,13 @@
     settings.experimental-features = [ "nix-command" "flakes" ];
     gc = { automatic = true; };
   };
-
-  services = {
-    karabiner-elements = {
-      enable = true;
-      package = pkgs.karabiner-elements;
-    };
-  };
+  
+  # services = {
+  #   karabiner-elements = {
+  #     enable = true;
+  #     package = pkgs.karabiner-elements;
+  #   };
+  # };
   
   system = {
     stateVersion = 6;
@@ -73,10 +73,12 @@
 
     casks = [
       "alcom"
+      "amethyst"
       "chatgpt"
       "claude"
       # "firefox@nightly"
       "unity-hub"
+      "raycast"
       "warp"
     ];
   };
