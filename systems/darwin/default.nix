@@ -1,5 +1,4 @@
-{ self, nixpkgs, home-manager, nix-darwin, emacs-overlay, rust-overlay, fenix
-, org-babel, rustowl-flake }:
+{ self, nixpkgs, home-manager, nix-darwin, overlays, org-babel }:
 let
   system = "aarch64-darwin";
   username = "kyre";
@@ -17,8 +16,7 @@ in {
       {
         home-manager.useUserPackages = true;
         home-manager.users."${username}" = import ../../home {
-          inherit system nixpkgs emacs-overlay rust-overlay fenix org-babel
-            rustowl-flake;
+          inherit system nixpkgs overlays org-babel ;
         };
       }
     ];

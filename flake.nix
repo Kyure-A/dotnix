@@ -41,20 +41,25 @@
         home-manager-official
       else
         home-manager-kyre;
+      
+      overlays = {
+        karabiner-elements = (import ./overlays/karabiner-elements);
+        emacs = emacs-overlay;
+        rust = rust-overlay;
+        fenix = fenix;
+        rustowl = rustowl-flake;
+      };
     in {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
-
+      
       darwinConfigurations = (import ./systems/darwin {
-        inherit self nixpkgs home-manager nix-darwin emacs-overlay rust-overlay
-          fenix org-babel rustowl-flake;
+        inherit self nixpkgs home-manager nix-darwin overlays org-babel;
       });
 
       nixosConfigurations = (import ./systems/wsl {
-        inherit self nixpkgs home-manager nixos-wsl emacs-overlay rust-overlay
-          fenix org-babel rustowl-flake;
+        inherit self nixpkgs home-manager nixos-wsl overlays org-babel;
       }) // (import ./systems/x230 {
-        inherit self nixpkgs home-manager emacs-overlay rust-overlay fenix
-          org-babel;
-      });
+          inherit self nixpkgs home-manager org-babel;
+        });
     };
 }

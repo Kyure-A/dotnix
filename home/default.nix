@@ -1,11 +1,11 @@
-{ system, nixpkgs, emacs-overlay, rust-overlay, fenix, org-babel, rustowl-flake
+{ system, nixpkgs, overlays, org-babel
 }:
 let
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
     overlays = import ./overlays {
-      inherit emacs-overlay rust-overlay fenix rustowl-flake;
+      inherit overlays;
     };
   };
 
