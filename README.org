@@ -4,6 +4,11 @@
 
 
 ** Usage
+*** MacBook Air (M4)
+#+begin_src shell
+  nix run nix-darwin --extra-experimental-features 'flakes nix-command' -- switch --flake .#darwin --show-trace
+#+end_src
+
 *** Windows Subsystem for Linux
 #+begin_src shell
   sudo nixos-rebuild switch --flake .#wsl --show-trace
