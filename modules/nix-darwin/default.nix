@@ -63,6 +63,15 @@
     };
   };
 
+  services = {
+    aerospace = {
+      enable = true;
+      settings = {
+        # start-at-login = true;
+      };
+    };
+  };
+  
   time.timeZone = "Asia/Tokyo";
 
   homebrew = {
@@ -79,10 +88,10 @@
 
     casks = [
       "alcom"
-      "amethyst"
       "chatgpt"
       "claude"
       # "firefox@nightly"
+      "nikitabobko/tap/aerospace"
       "unity-hub"
       "raycast"
       "warp"
