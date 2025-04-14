@@ -15,7 +15,6 @@ in
   x230 = nixpkgs.lib.nixosSystem {
     inherit system;
     modules = [
-      ../../modules/base
       ../../modules/nixos
       ./hardware-configurations.nix
       home-manager.nixosModules.home-manager
