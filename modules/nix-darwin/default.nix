@@ -2,7 +2,7 @@
 
 { pkgs, ... }:
 let
-  homebrew = import ./homebrew.nix;
+  homebrew = import ./homebrew;
 in
 {
   imports = [
