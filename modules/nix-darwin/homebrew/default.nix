@@ -18,6 +18,7 @@
       # "firefox@nightly"
       "nikitabobko/tap/aerospace"
       "unity-hub"
+      "postman"
       "raycast"
       "warp"
     ];
