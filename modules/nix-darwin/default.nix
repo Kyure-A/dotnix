@@ -1,7 +1,14 @@
 # https://nix-darwin.github.io/nix-darwin/manual/index.html
 
 { pkgs, ... }:
+let
+  homebrew = import ./homebrew.nix;
+in
 {
+  imports = [
+    homebrew
+  ];
+  
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
@@ -71,30 +78,6 @@
       };
     };
   };
-  
+
   time.timeZone = "Asia/Tokyo";
-
-  homebrew = {
-    enable = true;
-    onActivation = {
-      autoUpdate = true;
-      upgrade = true;
-      cleanup = "uninstall";
-    };
-
-    brews = [
-      "pinentry-mac"
-    ];
-
-    casks = [
-      "alcom"
-      "chatgpt"
-      "claude"
-      # "firefox@nightly"
-      "nikitabobko/tap/aerospace"
-      "unity-hub"
-      "raycast"
-      "warp"
-    ];
-  };
 }
