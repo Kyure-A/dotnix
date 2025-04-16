@@ -3,6 +3,7 @@ with pkgs;
 let
   common = [
     aider-chat
+    alacritty
     baobab
     bun
     delta
