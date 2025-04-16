@@ -55,6 +55,7 @@
       overlays = {
         karabiner-elements = (import ./overlays/karabiner-elements.nix);
         emacs = emacs-overlay.overlay;
+        emacs-no-native-comp = (import ./overlays/emacs-no-native-comp.nix);
         rust = rust-overlay.overlays.default;
         fenix = fenix.overlays.default;
         rustowl = rustowl-flake.overlays.default;
