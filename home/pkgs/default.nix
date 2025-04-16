@@ -8,7 +8,8 @@ let
     deno
     docker
     dotnet-sdk # C#
-    (emacs-git.override { withNativeCompilation = false; })
+    emacs-git
+    # (emacs-git.override { withNativeCompilation = false; })
     emacs-lsp-booster
     eza
     gcc
