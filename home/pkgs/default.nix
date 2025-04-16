@@ -3,6 +3,7 @@ with pkgs;
 let
   common = [
     aider-chat
+    baobab
     bun
     delta
     deno
