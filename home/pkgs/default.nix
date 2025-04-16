@@ -22,6 +22,7 @@ let
     neofetch
     nixd
     nixpkgs-fmt
+    nodejs_22
     nodePackages.typescript-language-server
     ollama
     omnisharp-roslyn # C#
