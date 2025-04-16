@@ -30,6 +30,7 @@ let
     satysfi
     # tectonic
     tree-sitter
+    vscode
     web-ext # mozilla
     zsh-defer
   ];
