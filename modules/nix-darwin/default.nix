@@ -23,12 +23,17 @@ in
     };
   };
 
-  # services = {
-  #   karabiner-elements = {
-  #     enable = true;
-  #     package = pkgs.karabiner-elements;
-  #   };
-  # };
+  services = {
+    # aerospace = {
+    #   enable = true;
+    #   settings = {
+    #   };
+    # };
+    # karabiner-elements = {
+    #   enable = true;
+    #   package = pkgs.karabiner-elements;
+    # };
+  };
 
   system = {
     stateVersion = 6;
@@ -66,15 +71,6 @@ in
       trackpad = {
         Clicking = true;
         Dragging = true;
-      };
-    };
-  };
-
-  services = {
-    aerospace = {
-      enable = true;
-      settings = {
-        # start-at-login = true;
       };
     };
   };
