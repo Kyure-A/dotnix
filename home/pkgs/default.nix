@@ -3,7 +3,6 @@ with pkgs;
 let
   common = [
     aider-chat
-    alacritty
     baobab
     bun
     delta
@@ -32,6 +31,7 @@ let
     rust-analyzer
     satysfi
     # tectonic
+    tmux
     tree-sitter
     vscode
     web-ext # mozilla

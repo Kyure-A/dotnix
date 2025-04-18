@@ -12,11 +12,11 @@
     ];
 
     casks = [
+      "alacritty"
       "alcom"
       "chatgpt"
       "claude"
       # "firefox@nightly"
-      "nikitabobko/tap/aerospace"
       "unity-hub"
       "postman"
       "raycast"
