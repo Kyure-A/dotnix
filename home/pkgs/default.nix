@@ -30,6 +30,7 @@ let
     rust-bin.stable.latest.default
     rust-analyzer
     satysfi
+    sheldon
     # tectonic
     tmux
     tree-sitter
