@@ -3,6 +3,7 @@
   nixpkgs,
   overlays,
   org-babel,
+  emacs-d,
   emacs-config
 }:
 let
@@ -17,7 +18,7 @@ let
   programs = import ./programs { inherit pkgs emacs-config; };
 in
 {
-  imports = programs ++ [ emacs-config.homeModules.${system}.twist ];
+  imports = programs ++ [ emacs-d.homeModules.${system}.twist ];
   home.packages = import ./pkgs { inherit pkgs; };
 
   home.stateVersion = "24.11";

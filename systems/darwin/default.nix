@@ -5,7 +5,7 @@
   nix-darwin,
   overlays,
   org-babel,
-  emacs-config,
+  emacs-d,
 }:
 let
   system = "aarch64-darwin";
@@ -15,6 +15,7 @@ let
     {
       users.users.${username}.home = "/Users/${username}";
     };
+  emacs-config = emacs-d.packages.${system}.default;
 in
 {
   darwin = nix-darwin.lib.darwinSystem {
@@ -32,6 +33,7 @@ in
             nixpkgs
             overlays
             org-babel
+            emacs-d
             emacs-config
           ;
         };

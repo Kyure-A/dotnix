@@ -53,7 +53,7 @@
         "type": "github"
       }
     },
-    "emacs-config": {
+    "emacs-d": {
       "inputs": {
         "elpa": "elpa",
         "emacs": "emacs",
@@ -531,7 +531,7 @@
     },
     "root": {
       "inputs": {
-        "emacs-config": "emacs-config",
+        "emacs-d": "emacs-d",
         "emacs-overlay": "emacs-overlay",
         "fenix": "fenix",
         "home-manager": "home-manager",

@@ -7,6 +7,7 @@ let
   starship = import ./starship;
   zsh = import ./zsh { inherit pkgs; };
   common = [
+    emacs-twist
     git
     sheldon
     starship

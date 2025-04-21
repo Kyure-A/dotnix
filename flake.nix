@@ -26,7 +26,7 @@
     };
     org-babel.url = "github:emacs-twist/org-babel";
     rustowl-flake.url = "github:mrcjkb/rustowl-flake";
-    emacs-config.url = "github:Kyure-A/.emacs.d?ref=develop";
+    emacs-d.url = "github:Kyure-A/.emacs.d?ref=develop";
   };
 
   outputs =
@@ -41,7 +41,7 @@
       org-babel,
       rustowl-flake,
       nix-darwin,
-      emacs-config,
+      emacs-d,
     }:
     let
       overlays = {
@@ -68,7 +68,7 @@
               nix-darwin
               overlays
               org-babel
-              emacs-config
+              emacs-d
             ;
           }
         );
@@ -82,7 +82,7 @@
               nixos-wsl
               overlays
               org-babel
-              emacs-config
+              emacs-d
             ;
           });
         # // (import ./systems/x230 {
