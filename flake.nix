@@ -3,12 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager-official = {
+    home-manager = {
       url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    home-manager-kyre = {
-      url = "github:Kyure-A/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-wsl = {
@@ -30,14 +26,14 @@
     };
     org-babel.url = "github:emacs-twist/org-babel";
     rustowl-flake.url = "github:mrcjkb/rustowl-flake";
+    emacs-config.url = "github:Kyure-A/.emacs.d?ref=develop";
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      home-manager-official,
-      home-manager-kyre,
+      home-manager,
       nixos-wsl,
       emacs-overlay,
       rust-overlay,
@@ -45,13 +41,9 @@
       org-babel,
       rustowl-flake,
       nix-darwin,
+      emacs-config,
     }:
     let
-      settings = {
-        useOfficial = false;
-      };
-      home-manager = if settings.useOfficial then home-manager-official else home-manager-kyre;
-
       overlays = {
         karabiner-elements = (import ./overlays/karabiner-elements.nix);
         emacs = emacs-overlay.overlay;
@@ -61,43 +53,46 @@
         rustowl = rustowl-flake.overlays.default;
       };
     in
-    {
-      formatter = {
-        x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
-        aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-rfc-style;
+      {
+        formatter = {
+          x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+          aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-rfc-style;
+        };
+
+        darwinConfigurations = (
+          import ./systems/darwin {
+            inherit
+              self
+              nixpkgs
+              home-manager
+              nix-darwin
+              overlays
+              org-babel
+              emacs-config
+            ;
+          }
+        );
+
+        nixosConfigurations =
+          (import ./systems/wsl {
+            inherit
+              self
+              nixpkgs
+              home-manager
+              nixos-wsl
+              overlays
+              org-babel
+              emacs-config
+            ;
+          });
+        # // (import ./systems/x230 {
+            #   inherit
+            #     self
+            #     nixpkgs
+            #     home-manager
+            #     org-babel
+            #     emacs-config
+            #   ;
+            # });
       };
-
-      darwinConfigurations = (
-        import ./systems/darwin {
-          inherit
-            self
-            nixpkgs
-            home-manager
-            nix-darwin
-            overlays
-            org-babel
-            ;
-        }
-      );
-
-      nixosConfigurations =
-        (import ./systems/wsl {
-          inherit
-            self
-            nixpkgs
-            home-manager
-            nixos-wsl
-            overlays
-            org-babel
-            ;
-        })
-        // (import ./systems/x230 {
-          inherit
-            self
-            nixpkgs
-            home-manager
-            org-babel
-            ;
-        });
-    };
 }

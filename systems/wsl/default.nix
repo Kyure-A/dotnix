@@ -5,6 +5,7 @@
   nixos-wsl,
   overlays,
   org-babel,
+  emacs-config
 }:
 let
   username = "kyre";
@@ -17,6 +18,7 @@ in
       ../../modules/nixos-wsl
       nixos-wsl.nixosModules.default
       home-manager.nixosModules.home-manager
+      emacs-config.homeModules.${system}.twist
       {
         home-manager.useUserPackages = true;
         home-manager.users."${username}" = import ../../home {
@@ -25,7 +27,8 @@ in
             nixpkgs
             overlays
             org-babel
-            ;
+            emacs-config
+          ;
         };
       }
     ];

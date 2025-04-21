@@ -5,6 +5,7 @@
   nix-darwin,
   overlays,
   org-babel,
+  emacs-config,
 }:
 let
   system = "aarch64-darwin";
@@ -23,6 +24,7 @@ in
       configuration
       ../../modules/nix-darwin
       home-manager.darwinModules.home-manager
+      emacs-config.homeModules.${system}.twist
       {
         home-manager.useUserPackages = true;
         home-manager.users."${username}" = import ../../home {
@@ -31,7 +33,8 @@ in
             nixpkgs
             overlays
             org-babel
-            ;
+            emacs-config
+          ;
         };
       }
     ];

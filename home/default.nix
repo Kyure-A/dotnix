@@ -3,6 +3,7 @@
   nixpkgs,
   overlays,
   org-babel,
+  emacs-config
 }:
 let
   pkgs = import nixpkgs {
@@ -13,7 +14,7 @@ let
     };
   };
 
-  programs = import ./programs { inherit pkgs; };
+  programs = import ./programs { inherit pkgs emacs-config; };
 in
 {
   imports = programs;
