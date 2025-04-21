@@ -17,7 +17,7 @@ let
   programs = import ./programs { inherit pkgs emacs-config; };
 in
 {
-  imports = programs;
+  imports = programs ++ [ emacs-config.homeModules.${system}.twist ];
   home.packages = import ./pkgs { inherit pkgs; };
 
   home.stateVersion = "24.11";
