@@ -5,11 +5,12 @@
   nixos-wsl,
   overlays,
   org-babel,
-  emacs-config
+  emacs-d
 }:
 let
   username = "kyre";
   system = "x86_64-linux";
+  emacs-config = emacs-d.packages.${system}.default;
 in
 {
   wsl = nixpkgs.lib.nixosSystem {
@@ -26,6 +27,7 @@ in
             nixpkgs
             overlays
             org-babel
+            emacs-d
             emacs-config
           ;
         };
