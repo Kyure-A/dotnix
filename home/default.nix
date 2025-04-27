@@ -2,7 +2,6 @@
   system,
   nixpkgs,
   overlays,
-  org-babel,
   emacs-d,
   emacs-config
 }:

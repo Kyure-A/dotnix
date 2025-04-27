@@ -24,7 +24,6 @@
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    org-babel.url = "github:emacs-twist/org-babel";
     rustowl-flake.url = "github:mrcjkb/rustowl-flake";
     emacs-d = {
       url = "github:Kyure-A/.emacs.d";

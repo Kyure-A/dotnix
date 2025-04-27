@@ -4,7 +4,6 @@
   home-manager,
   nixos-wsl,
   overlays,
-  org-babel,
   emacs-d
 }:
 let
@@ -26,7 +25,6 @@ in
             system
             nixpkgs
             overlays
-            org-babel
             emacs-d
             emacs-config
           ;

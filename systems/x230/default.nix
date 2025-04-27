@@ -2,14 +2,13 @@
   self,
   nixpkgs,
   home-manager,
-  emacs-overlay,
-  rust-overlay,
-  fenix,
-  org-babel,
+  overlays,
+  emacs-d
 }:
 let
   username = "kyre";
   system = "x86_64-linux";
+  emacs-config = emacs-d.packages.${system}.default;
 in
 {
   x230 = nixpkgs.lib.nixosSystem {
@@ -24,11 +23,10 @@ in
           inherit
             system
             nixpkgs
-            emacs-overlay
-            rust-overlay
-            fenix
-            org-babel
-            ;
+            overlays
+            emacs-d
+            emacs-config
+          ;
         };
       }
     ];
