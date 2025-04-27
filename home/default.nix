@@ -8,11 +8,8 @@
 }:
 let
   pkgs = import nixpkgs {
-    inherit system;
+    inherit system overlays;
     config.allowUnfree = true;
-    overlays = import ./overlays {
-      inherit overlays;
-    };
   };
 
   programs = import ./programs { inherit pkgs emacs-config; };

@@ -47,14 +47,18 @@
       emacs-d,
     }:
     let
-      overlays = {
-        karabiner-elements = (import ./overlays/karabiner-elements.nix);
-        emacs = emacs-overlay.overlay;
-        emacs-no-native-comp = (import ./overlays/emacs-no-native-comp.nix);
-        rust = rust-overlay.overlays.default;
-        fenix = fenix.overlays.default;
-        rustowl = rustowl-flake.overlays.default;
-      };
+      karabiner-elements = (import ./overlays/karabiner-elements.nix);
+      
+      emacs-no-native-comp = (import ./overlays/emacs-no-native-comp.nix);
+      
+      overlays = [
+        karabiner-elements
+        emacs-overlay.overlay
+        emacs-no-native-comp
+        rust-overlay.overlays.default
+        fenix.overlays.default
+        rustowl-flake.overlays.default
+      ];
     in
       {
         formatter = {
@@ -89,13 +93,13 @@
             ;
           });
         # // (import ./systems/x230 {
-            #   inherit
-            #     self
-            #     nixpkgs
-            #     home-manager
-            #     org-babel
-            #     emacs-config
-            #   ;
-            # });
+        #   inherit
+        #     self
+        #     nixpkgs
+        #     home-manager
+        #     org-babel
+        #     emacs-config
+        #   ;
+        # });
       };
 }
