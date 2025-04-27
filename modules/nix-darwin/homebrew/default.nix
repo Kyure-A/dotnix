@@ -24,6 +24,7 @@
     ];
 
     masApps = {
+      GoodNotes = 1444383602;
       Runcat = 1429033973;
       SwiftPlaygrounds = 1496833156;
       Xcode = 497799835;
