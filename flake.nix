@@ -27,7 +27,7 @@
     org-babel.url = "github:emacs-twist/org-babel";
     rustowl-flake.url = "github:mrcjkb/rustowl-flake";
     emacs-d = {
-      url = "github:Kyure-A/.emacs.d?ref=develop";
+      url = "github:Kyure-A/.emacs.d";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
