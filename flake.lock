@@ -68,11 +68,11 @@
         "twist": "twist"
       },
       "locked": {
-        "lastModified": 1745665833,
-        "narHash": "sha256-VzcccGJ1nC6+czUBDK2qsEbQR83JIZOC/SJA+4Ii0ok=",
+        "lastModified": 1745834695,
+        "narHash": "sha256-0jFjzGtEFq9O7AdRAmkRj4bxs4H8Z6FmWzwdYXJEZwM=",
         "owner": "Kyure-A",
         "repo": ".emacs.d",
-        "rev": "c4fb02491d737b2c6ae5ecb83cbc5939a658a048",
+        "rev": "5a4c0d3163b391ebfccda422c2b319783cbb3c0f",
         "type": "github"
       },
       "original": {
@@ -502,21 +502,6 @@
         "type": "github"
       }
     },
-    "org-babel_2": {
-      "locked": {
-        "lastModified": 1731256202,
-        "narHash": "sha256-xtV0vIUhl3ZUzaUIHSaiWpybxyCgQ9Yp/MUGo3f5zvM=",
-        "owner": "emacs-twist",
-        "repo": "org-babel",
-        "rev": "a5d16c54aca35c07af59d216cda598163512db42",
-        "type": "github"
-      },
-      "original": {
-        "owner": "emacs-twist",
-        "repo": "org-babel",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "emacs-d": "emacs-d",
@@ -526,7 +511,6 @@
         "nix-darwin": "nix-darwin",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_3",
-        "org-babel": "org-babel_2",
         "rust-overlay": "rust-overlay",
         "rustowl-flake": "rustowl-flake"
       }
