@@ -40,7 +40,6 @@
       emacs-overlay,
       rust-overlay,
       fenix,
-      org-babel,
       rustowl-flake,
       nix-darwin,
       emacs-d,
@@ -73,7 +72,6 @@
               home-manager
               nix-darwin
               overlays
-              org-babel
               emacs-d
             ;
           }
@@ -87,7 +85,6 @@
               home-manager
               nixos-wsl
               overlays
-              org-babel
               emacs-d
             ;
           });
@@ -96,7 +93,6 @@
         #     self
         #     nixpkgs
         #     home-manager
-        #     org-babel
         #     emacs-config
         #   ;
         # });
