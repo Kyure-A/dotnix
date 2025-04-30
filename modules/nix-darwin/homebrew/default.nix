@@ -17,6 +17,7 @@
       "chatgpt"
       "claude"
       "docker"
+      "docker-compose"
       # "firefox@nightly"
       "unity-hub"
       "postman"
