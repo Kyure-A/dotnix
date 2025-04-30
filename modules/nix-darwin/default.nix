@@ -29,10 +29,10 @@ in
     #   settings = {
     #   };
     # };
-    # karabiner-elements = {
-    #   enable = true;
-    #   package = pkgs.karabiner-elements;
-    # };
+    karabiner-elements = {
+      enable = true;
+      package = pkgs.karabiner-elements;
+    };
   };
 
   system = {

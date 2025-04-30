@@ -19,6 +19,7 @@ in
 {
   darwin = nix-darwin.lib.darwinSystem {
     inherit system;
+    nixpkgs.overlays = overlays;
     specialArgs = { inherit username; };
     modules = [
       configuration
