@@ -16,6 +16,7 @@
       "alcom"
       "chatgpt"
       "claude"
+      "docker"
       # "firefox@nightly"
       "unity-hub"
       "postman"

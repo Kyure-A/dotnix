@@ -7,7 +7,6 @@ let
     bun
     delta
     deno
-    docker
     dotnet-sdk # C#
     emacs-lsp-booster
     eza
@@ -37,7 +36,7 @@ let
     zsh-defer
   ];
 
-  nonDarwin = if !stdenv.isDarwin then [ pinentry-all ] else [ ];
+  nonDarwin = if !stdenv.isDarwin then [ pinentry-all docker ] else [ ];
   darwin =
     if stdenv.isDarwin then
       [
