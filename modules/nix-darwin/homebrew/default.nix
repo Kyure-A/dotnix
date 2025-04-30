@@ -8,6 +8,7 @@
     };
 
     brews = [
+      "docker-compose"
       "pinentry-mac"
     ];
 
@@ -17,7 +18,6 @@
       "chatgpt"
       "claude"
       "docker"
-      "docker-compose"
       # "firefox@nightly"
       "unity-hub"
       "postman"
