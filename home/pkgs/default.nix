@@ -46,4 +46,4 @@ let
     else
       [ ];
 in
-common ++ nonDarwin ++ darwing
+common ++ nonDarwin ++ darwin
