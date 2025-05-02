@@ -19,6 +19,13 @@
  sudo nixos-rebuild switch --flake .#x230 --show-trace
 #+end_src
 
+** node2nix
+in node2nix/
+#+begin_src shell
+ nix-shell -p nodePackages.node2nix --command "node2nix -i ./node2nix.json -o packages.nix"
+#+end_src
+
+
 ** Format
 #+begin_src shell
  nix fmt ./
