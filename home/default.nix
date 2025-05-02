@@ -11,7 +11,7 @@ let
     config.allowUnfree = true;
   };
 
-  node2nix = pkgs.callPackage ../../node2nix { inherit pkgs; };
+  node2nix = pkgs.callPackage ../node2nix { inherit pkgs; };
   
   programs = import ./programs { inherit pkgs emacs-config node2nix; };
 in
