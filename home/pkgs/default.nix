@@ -46,4 +46,4 @@ let
     else
       [ ];
 in
-common ++ nonDarwin ++ darwin ++ node2nix
+common ++ nonDarwin ++ darwing
