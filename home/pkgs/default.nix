@@ -1,4 +1,4 @@
-{ pkgs, node2nix }:
+{ pkgs }:
 with pkgs;
 let
   common = [

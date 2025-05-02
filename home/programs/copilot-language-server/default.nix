@@ -11,11 +11,9 @@ in
 {
   home.packages = [ node2nix."@github/copilot-language-server" ];
 
-  programs.zsh = {
-    initContent = ''
-    export COPILOT_LANGUAGE_SERVER_PATH=${
-       node2nix."@github/copilot-language-server"
-     }/lib/node_modules/@github/copilot-language-server/native/${platform}/copilot-language-server
-  '';
+  home.sessionVariables = {
+    COPILOT_LANGUAGE_SERVER_PATH =
+      "${ node2nix."@github/copilot-language-server"
+        }/lib/node_modules/@github/copilot-language-server/native/${platform}/copilot-language-server";
   };
 }

@@ -17,7 +17,7 @@ let
 in
 {
   imports = programs ++ [ emacs-d.homeModules.${system}.twist ];
-  home.packages = import ./pkgs { inherit pkgs node2nix; };
+  home.packages = import ./pkgs { inherit pkgs; };
 
   home.stateVersion = "24.11";
 }
