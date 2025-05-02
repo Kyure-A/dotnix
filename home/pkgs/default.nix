@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, node2nix }:
 with pkgs;
 let
   common = [
@@ -35,7 +35,7 @@ let
     web-ext # mozilla
     zsh-defer
   ];
-
+  
   nonDarwin = if !stdenv.isDarwin then [ pinentry-all docker ] else [ ];
   darwin =
     if stdenv.isDarwin then
@@ -46,4 +46,4 @@ let
     else
       [ ];
 in
-common ++ nonDarwin ++ darwin
+common ++ nonDarwin ++ darwin ++ node2nix
