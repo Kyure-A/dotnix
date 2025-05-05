@@ -65,7 +65,7 @@
         };
 
         darwinConfigurations = (
-          import ./systems/darwin {
+          import ./hosts/darwin {
             inherit
               self
               nixpkgs
@@ -78,7 +78,7 @@
         );
 
         nixosConfigurations =
-          (import ./systems/wsl {
+          (import ./hosts/wsl {
             inherit
               self
               nixpkgs
@@ -88,7 +88,7 @@
               emacs-d
             ;
           });
-        # // (import ./systems/x230 {
+        # // (import ./hosts/x230 {
         #   inherit
         #     self
         #     nixpkgs
