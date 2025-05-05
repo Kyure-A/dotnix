@@ -18,10 +18,11 @@
       "chatgpt"
       "claude"
       "docker"
-      # "firefox@nightly"
-      "unity-hub"
+      "firefox"
+      "node"
       "postman"
       "raycast"
+      "unity-hub"
       "warp"
     ];
 
