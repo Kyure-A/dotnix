@@ -19,7 +19,6 @@
       "claude"
       "docker"
       "firefox"
-      "node"
       "postman"
       "raycast"
       "unity-hub"
