@@ -15,7 +15,7 @@ in
   wsl = nixpkgs.lib.nixosSystem {
     inherit system;
     modules = [
-      ../../modules/nixos-wsl
+      ../../nixos-wsl
       nixos-wsl.nixosModules.default
       home-manager.nixosModules.home-manager
       {
