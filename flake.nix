@@ -14,8 +14,7 @@
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    };    
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,7 +36,6 @@
       nixpkgs,
       home-manager,
       nixos-wsl,
-      emacs-overlay,
       rust-overlay,
       fenix,
       rustowl-flake,
@@ -47,12 +45,8 @@
     let
       karabiner-elements = (import ./overlays/karabiner-elements.nix);
       
-      emacs-no-native-comp = (import ./overlays/emacs-no-native-comp.nix);
-      
       overlays = [
         karabiner-elements
-        emacs-overlay.overlay
-        emacs-no-native-comp
         rust-overlay.overlays.default
         fenix.overlays.default
         rustowl-flake.overlays.default
