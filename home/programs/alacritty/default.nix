@@ -1,13 +1,15 @@
 {
   programs.alacritty = {
     enable = true;
-    shell = {
-      program = "zsh";
-      args = [
-        "-l"
-        "-c"
-        "tmux a -t 0 || tmux"
-      ];
+    settings = {
+      shell = {
+        program = "zsh";
+        args = [
+          "-l"
+          "-c"
+          "tmux a -t 0 || tmux"
+        ];
+      };
     };
   };
 }
