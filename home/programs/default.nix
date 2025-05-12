@@ -1,5 +1,6 @@
 { pkgs, emacs-config, node2nix }:
 let
+  alacritty = import ./alacritty;
   copilot-language-server = import ./copilot-language-server { inherit pkgs node2nix;};
   emacs-twist = import ./emacs-twist { inherit emacs-config; };
   git = import ./git { inherit pkgs; };
@@ -15,6 +16,6 @@ let
     starship
     zsh
   ];
-  darwin = if pkgs.stdenv.isDarwin then [ karabiner ] else [ ];
+  darwin = if pkgs.stdenv.isDarwin then [ alacritty karabiner ] else [ ];
 in
 common ++ darwin
