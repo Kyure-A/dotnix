@@ -68,11 +68,11 @@
         "twist": "twist"
       },
       "locked": {
-        "lastModified": 1746759412,
-        "narHash": "sha256-NX6Bmy/XcjdGeraMPoR+xY3T6K6eXp5n8GFQNMWCY1o=",
+        "lastModified": 1747392323,
+        "narHash": "sha256-EtLGG9eglO25ekzbNeC8X8AcZ1Y5qL4EyWm9w0uc0MQ=",
         "owner": "Kyure-A",
         "repo": ".emacs.d",
-        "rev": "64dbb607624b7e18508d0b7301af36597b474c84",
+        "rev": "062ed087e6a8ef1aaecf242522480a2f6182d31d",
         "type": "github"
       },
       "original": {
