@@ -24,6 +24,7 @@ let
     ollama
     omnisharp-roslyn # C#
     openssl
+    ripgrep
     rust-bin.stable.latest.default
     rust-analyzer
     satysfi
